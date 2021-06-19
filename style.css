@@ -97,6 +97,7 @@ h1 {
     color: black;
     width: 100%;
     text-align: left;
+    font-size: xx-large;
 
 }
 
@@ -145,6 +146,7 @@ h1 {
 
 * {
     box-sizing: border-box;
+    font-size: xx-large;
 }
 
 /* Remove margins and padding from the list */
@@ -159,7 +161,7 @@ ul li {
     position: relative;
     padding: 12px 8px 12px 40px;
     background: #eee;
-    font-size: 18px;
+    font-size: xx-large;
     transition: 0.2s;
 
     /* make the list items unselectable */
