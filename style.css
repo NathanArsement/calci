@@ -271,3 +271,18 @@ input {
     background-color: #bbb;
     font-size: xx-large;
 }
+.calculator{
+    background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 100%;
+  position: fixed;
+  top: 90%;
+  right: 5%;
+}

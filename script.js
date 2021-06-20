@@ -94,3 +94,6 @@ function SSum(){
     
     document.getElementById("SSUUMM").innerHTML=sum;
 }
+function openCalculator(){
+    window.open("cal.html", "_self");
+}
