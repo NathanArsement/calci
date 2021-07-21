@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html style="padding-top: 0cm;">
+
+<head>
+    <title>
+        CALCI
+    </title>
+    <style>
+        form {
+            font-size: xx-large;
+        }
+
+        input {
+            font-size: xx-large;
+            color: black;
+        }
+    </style>
+    <script>
+
+        var speed = 0, distance = 0, time = 0;
+        function Time(a, b) {
+            time = a;
+            Calculate(b);
+        }
+        function Distance(a, b) {
+            distance = a;
+            Calculate(b);
+        }
+        function Speed(a, b) {
+            speed = a;
+            Calculate(b);
+        }
+        function Calculate(sd) {
+            if (speed != 0) {
+                if (time != 0) {
+                    sd.d.value = speed * time;
+                }
+                if (distance != 0) {
+                    sd.t.value = distance / speed;
+                }
+            }
+            if (distance != 0) {
+                if (time != 0) {
+                    sd.v.value = distance / time;
+                }
+                if (speed != 0) {
+                    sd.t.value = distance / speed;
+                }
+            }
+            if (time != 0) {
+                if (speed != 0) {
+                    sd.d.value = speed * time;
+                }
+                if (distance != 0) {
+                    sd.v.value = distance / time;
+                }
+            }
+            function Black() {
+                document.getElementsByName("t").style.color = "black"
+            }
+        }
+
+
+
+    </script>
+</head>
+
+<body style="padding-top: 0ch;">
+    <div style="background-color: #f44336; color: white; text-align: center; font-size: xxx-large; padding-top: 0%;">
+        <h2>
+            Velocity<br><br>
+        </h2>
+    </div>
+    <form>
+        <table>
+            <tr>
+                <td>
+                    Distance:
+                </td>
+                <td>
+                    <input name="d" value="0" onchange="Distance(this.value, this.form)" onclick="this.value=''">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Time:
+                </td>
+                <td>
+                    <input name="t" value="0" onchange="Time(this.value, this.form)" onclick="this.value=''">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Velocity:
+                </td>
+                <td>
+                    <input name="v" value="0" onchange="Speed(this.value, this.form)" onclick="this.value=''">
+                </td>
+            </tr>
+        </table>
+
+
+
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" type="text/css" href="../all.css">
+    <script src="../script.js"></script>
+    <style>
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: "Lato", sans-serif;
+        }
+
+        /* Style the tab */
+        .tab {
+            float: left;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+            width: 10%;
+            height: 100%;
+        }
+
+        /* Style the buttons inside the tab */
+        .tab button {
+            display: block;
+            background-color: inherit;
+            color: black;
+            padding: 22px 16px;
+            width: 100%;
+            border: none;
+            outline: none;
+            text-align: left;
+            cursor: pointer;
+            font-size: 17px;
+        }
+
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        /* Create an active/current "tab button" class */
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+            float: left;
+            padding: 0px 12px;
+            border: 1px solid #ccc;
+            width: 90%;
+            border-left: none;
+            height: 100%;
+            display: none;
+        }
+
+        /* Clear floats after the tab */
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        form {
+            font-size: xx-large;
+        }
+
+        input {
+            font-size: xx-large;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div style="background-color: #f44336; color: white; text-align: center; font-size: xxx-large; padding-top: 0%;">
+        <h2>
+            Equations in One Variable<br><br>
+        </h2>
+    </div>
+
+    <script>
+        var s1, s2, s3, p, a;
+        function coeficient(aa, bb) {
+            s1 = parseFloat(aa);
+            Calculate(bb);
+        }
+        function value1(aa, bb) {
+            s2 = parseFloat(aa);
+            Calculate(bb);
+        }
+        function value2(aa, bb) {
+            s3 = parseFloat(aa);
+            Calculate(bb);
+        }
+        function Calculate(sd) {
+            if (s1 != null && s2 != null && s3 != null) {
+                p = s1 + s2 + s3;
+                sd.p.value = p;
+                sd.a.value = ((p / 2) * ((p / 2) + s1) * ((p / 2) + s2) * ((p / 2) + s3)) ** (1 / 2)
+            }
+        }
+        function Black() {
+            document.getElementsByName("t").style.color = "black"
+        }
+
+
+
+
+        //     function Acoeficient2(aa, bb) {
+        //     x2 = aa;
+        //     ACalculate(bb);
+        // }
+        //     function Acoeficient(aa, bb) {
+        //     x = aa;
+        //     ACalculate(bb);
+        // }
+        // function Avalue1(aa, bb) {
+        //     a = aa;
+        //     ACalculate(bb);
+        // }
+        // function Avalue2(aa, bb) {
+        //     b = aa;
+        //     ACalculate(bb);
+        // }
+        // function ACalculate(sd) {
+        //     if(x!=null && a!=null && b!=null && x2!=null){
+        //         a=a-b;
+        //         ans=((((x**2)-(4*x2*a))**(1/2))+(-x))/(2*x2);
+        //         sd.ans.value=ans;
+        //         ans=((((x**2)-(4*x2*a))**(1/2))-(-x))/(2*x2);
+        //         sd.ans1.value=ans;
+        //     }
+        //     }
+    </script>
+    <div class="tab">
+        <button class="tablinks" onmouseover="openCity(event, 'v1')" className="active">Degree 1</button>
+        <button class="tablinks" onmouseover="openCity(event, 'v2')">Degree 2</button>
+        <!-- <button class="tablinks" onmouseover="openCity(event, 'v3')">Degree 3</button> -->
+    </div>
+    <div id="v1" class="tabcontent">
+        <form>
+            <table align="center">
+                <tr>
+                    <td>
+                        s1:
+                    </td>
+                    <td>
+                        <input name="s1" value="0" onchange="coeficient(this.value, this.form)" onclick="this.value=''"
+                            onkeypress="this.style.width = ((this.value.length + 1) * 24) + 'px';" size="4">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        s2:
+                    </td>
+                    <td>
+                        <input name="s2" value="0" onchange="value1(this.value, this.form)" onclick="this.value=''"
+                            onkeypress="this.style.width = ((this.value.length + 1) * 24) + 'px';" size="4">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        s3:
+                    </td>
+                    <td>
+                        <input name="s3" value="0" onchange="value2(this.value, this.form)" onclick="this.value=''"
+                            onkeypress="this.style.width = ((this.value.length + 1) * 24) + 'px';" size="4">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        P:
+                    </td>
+                    <td>
+                        <input name="p" value="0" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        A:
+                    </td>
+                    <td>
+                        <input name="a" value="0" readonly>
+                    </td>
+                </tr>
+            </table>
+
+
+
+        </form>
+    </div>
+    <!-- <div id="v2" class="tabcontent">
+        <form>
+            <table align="center">
+                <tr>
+                    <td>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input name="x2" value="0" onchange="Acoeficient2(this.value, this.form)"
+                            onclick="this.value=''"
+                            onkeypress="this.style.width = ((this.value.length + 1) * 22) + 'px';"
+                            size="4">x<sup>2</sup>
+
+
+                        <input name="x" value="0" onchange="Acoeficient(this.value, this.form)" onclick="this.value=''"
+                            onkeypress="this.style.width = ((this.value.length + 1) * 22) + 'px';" size="4">x
+
+
+
+                        <input name="b" value="0" onchange="Avalue1(this.value, this.form)" onclick="this.value=''"
+                            onkeypress="this.style.width = ((this.value.length + 1) * 22) + 'px';" size="4">
+
+
+
+                        <input name="c" value="0" onchange="Avalue2(this.value, this.form)" onclick="this.value=''"
+                            onkeypress="this.style.width = ((this.value.length + 1) * 22) + 'px';" size="4">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <br>
+                    </td>
+                </tr>
+
+            </table> -->
+
+
+
+        </form>
+    </div>
+
+    <div class="clearfix"></div>
+    <script>
+        function openCity(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+    <button class="calculator" onclick="openCalculator()"><i class="gg-calculator" style="font-size:72px"></i></button>
+</body>
+
+</html>

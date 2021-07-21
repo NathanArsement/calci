@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>
+        CALCI
+    </title>
+    <script src="element.js"></script>
+
+    <link rel="stylesheet" href="../all.css">
+    <style>
+        * {
+            zoom: 98.2%;
+            font-size: xx-large;
+        }
+
+        .element {
+            overflow: hidden;
+
+
+
+
+        }
+
+        /* Style the buttons that are used to open the tab content */
+        .element button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            color: black;
+            border: 1px solid black;
+            background-color: white;
+            width: 100px;
+            text-align: center;
+            font-size: xxx-large;
+
+        }
+
+        /* Change background color of buttons on hover */
+        .element button:hover {
+            background-color: #ccc;
+
+
+        }
+
+        /* Create an active/current tablink class */
+    </style>
+
+</head>
+
+<body id="body">
+    <div class="element">
+        <form>
+            <table>
+                <tr id="1">
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(1, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            H
+                        </button>
+                    </td>
+                    <td colspan="16">
+
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(2, 4, 0, 4.002, 2, 1, 18, 'mole.html', '_self')">
+                            He
+                        </button>
+                    </td>
+                </tr>
+                <tr id="2">
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(3, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Li
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(4, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Be
+                        </button>
+                    </td>
+                    <td colspan="10">
+
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(5, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            B
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(6, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            C
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(7, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            N
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(8, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            O
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(9, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            F
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(10, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Ne
+                        </button>
+                    </td>
+                </tr>
+                <tr id="3">
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(11, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Na
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(12, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Mg
+                        </button>
+                    </td>
+                    <td colspan="10">
+
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(13, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Al
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(14, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Si
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(15, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            P
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(16, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            S
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(17, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Cl
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(18, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Ar
+                        </button>
+                    </td>
+                </tr>
+                <tr id="4">
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(19, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            K
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(20, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Ca
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(21, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Sc
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(22, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Ti
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(23, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            V
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(24, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Cr
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(25, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Mn
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(26, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Fe
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(27, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Co
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(28, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Ni
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(29, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Cu
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(30, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Zn
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(31, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Ga
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(32, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Ge
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(33, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            As
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(34, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Se
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(35, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Br
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(36, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Kr
+                        </button>
+                    </td>
+                </tr>
+                <tr id="5">
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(37, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Rb
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(38, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Sr
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(39, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Y
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(40, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Zr
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(41, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Nb
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(42, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Mo
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(43, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Tc
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(44, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Ru
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(45, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Rh
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(46, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Pd
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(47, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Ag
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(48, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Cd
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(49, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            In
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(50, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Sn
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(51, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Sb
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(52, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Te
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(53, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            I
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(54, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Xe
+                        </button>
+                    </td>
+                </tr>
+                <tr id="6">
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(55, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Cs
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(56, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Ba
+                        </button>
+                    </td>
+                    <td align="center">
+                        57-71<br>
+                        La-Lu
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(72, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Hf
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(73, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Ta
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(74, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            W
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(75, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Re
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(76, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Os
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(77, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Ir
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(78, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Pt
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(79, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Au
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(80, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Hg
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(81, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Tl
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(82, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Pb
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(83, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Bi
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(84, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Po
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(85, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            At
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(86, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Rn
+                        </button>
+                    </td>
+                </tr>
+                <tr id="7">
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(87, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Fr
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(88, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Ra
+                        </button>
+                    </td>
+                    <td align="center">
+                        89-103<br>
+                        Ac-Lr
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(104, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Rf
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(105, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Db
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(106, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Sg
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(107, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Bh
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(108, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Hs
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(109, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Mt
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(110, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Ds
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(111, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Rg
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(112, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Cn
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(113, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Nh
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(114, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Fl
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(115, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Mc
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(116, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Lv
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(117, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Ts
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(118, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Og
+                        </button>
+                    </td>
+                </tr>
+                <tr id="8">
+                    <td colspan="18">
+                        <br>
+                    </td>
+                </tr>
+                <tr id="9">
+                    <td colspan="3" align="right">
+                        Lanthanides &nbsp;
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(57, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            La
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(58, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Ce
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(59, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Pr
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(60, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Nd
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(61, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Pm
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(62, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Sm
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(63, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Eu
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(64, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Gd
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(65, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Tb
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(66, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Dy
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(67, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Ho
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(68, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Er
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(69, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Tm
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(70, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Vb
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(71, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Lu
+                        </button>
+                    </td>
+                </tr>
+                <tr id="10">
+                    <td colspan="3" align="right">
+                        Antinides &nbsp;
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(89, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Ac
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(90, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Th
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(91, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Pa
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(92, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            U
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(93, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Np
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(94, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Pu
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(95, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Am
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(96, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Cm
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(97, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Bk
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(98, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Cf
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(99, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Es
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(100, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Fm
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(101, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Md
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(102, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            No
+                        </button>
+                    </td>
+                    <td>
+                        <button class="elementBtn" onclick="nextPage(103, 1, 1, 1.008, 1, 1, 1, 'mole.html', '_self')">
+                            Lr
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+</body>
+
+</html>

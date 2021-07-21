@@ -1,89 +1,143 @@
-var sum=parseFloat(0);
-var next;
+<!DOCTYPE html>
+<html>
 
-function openCity(evt, cityName) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
+<head>
+  <title>
+    CALCI
+  </title>
+  <style>
+    body {
+      padding-top: 20px;
+      background-color: #202020;
     }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active", "");
+
+    h1 {
+      color: #E5E5E5;
+      font-family: 'Poppins', sans-serif;
+      letter-spacing: normal;
+      font-weight: 700;
     }
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
-  }
 
-
-
-var myNodelist = document.getElementsByTagName("LI");
-var i;
-for (i = 0; i < myNodelist.length; i++) {
-    var span = document.createElement("SPAN");
-    var txt = document.createTextNode("\u00D7");
-    span.className = "close";
-    span.appendChild(txt);
-    myNodelist[i].appendChild(span);
-}
-
-var close = document.getElementsByClassName("close");
-var i;
-for (i = 0; i < close.length; i++) {
-    close[i].onclick = function () {
-        var div = this.parentElement;
-        div.style.display = "none";
+    .converter-wrapper {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 600px;
+      text-align: center;
+      padding: 10px;
+      box-sizing: border-box;
     }
-    
-}
 
-function newElement() {
-    var li = document.createElement("li");
-    var inputValue = document.getElementById("myInput").value;
-    var t = document.createTextNode(inputValue);
-    li.appendChild(t);
-    if (inputValue === '') {
-        alert("You must write something!");
-    } else {
-        document.getElementById("myUL").appendChild(li);
-        
+    .converter-wrapper input {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1em;
+      width: 100%;
+      text-align: center;
+      margin-top: 10px;
+      height: 40px;
+      box-sizing: border-box;
     }
-    console.log(document.getElementById("myInput").value);
-    sum=sum+parseFloat(document.getElementById("myInput").value);
-    document.getElementById("SSUUMM").innerHTML=sum;
-    
-    document.getElementById("myInput").value = "";
 
-    var span = document.createElement("SPAN");
-    var txt = document.createTextNode("\u00D7");
-    span.className = "close";
-    span.appendChild(txt);
-    li.appendChild(span);
-    
-    for (i = 0; i < close.length; i++) {
-        close[i].onclick = function () {
-            var div = this.parentElement;
-            
-            div.style.display = "none";
-            console.log(div.innerHTML.replace("<span class=\"close\">×</span>",""));
-            sum=sum-div.innerHTML.replace("<span class=\"close\">×</span>","");
-            document.getElementById("SSUUMM").innerHTML=sum;
-        }
+    .converter-wrapper span {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      width: 100%;
     }
-}
-function SSum(){
-    
-    document.getElementById("SSUUMM").innerHTML=sum;
-}
-function openCalculator(){
-    window.open("cal.html", "_self");
-}
-function openPage(a, b){
-    window.open(a, "_self");
-    next=b;
-    
-}
-var property = new Array();
+
+    .converter-wrapper span select {
+      background-color: #263648;
+      color: #fff;
+      font-size: inherit;
+      padding: 10px;
+      width: 100%;
+      border: 0;
+      margin: 0;
+      border-radius: 0px;
+      text-indent: 0.01px;
+      text-overflow: '';
+      -webkit-appearance: none;
+      /* hide default arrow in chrome OSX */
+    }
+
+    .converter-wrapper span::before,
+    .converter-wrapper span::after {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+    }
+
+    .converter-wrapper span::after {
+      /*  Custom dropdown arrow */
+      content: "\25BC";
+      height: 1em;
+      font-size: .625em;
+      line-height: 1;
+      right: 1.5em;
+      top: 50%;
+      margin-top: -.5em;
+      color: #131B24;
+    }
+
+    .converter-wrapper span::before {
+      /*  Custom dropdown arrow cover */
+      width: 2.5em;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      border-radius: 0;
+      background-color: #202E3C;
+    }
+
+    .converter-side-a,
+    .converter-side-b {
+      float: left;
+      margin-top: 10px;
+      box-sizing: border-box;
+      width: 45%;
+    }
+
+    .converter-equals {
+      float: left;
+      box-sizing: border-box;
+      width: 10%;
+      color: #FFF;
+      font-size: 2.4em;
+      line-height: 0;
+      text-align: center;
+    }
+
+    .converter-side-a {
+      padding-right: 10px;
+    }
+
+    .converter-side-b {
+      padding-left: 10px;
+    }
+  </style>
+  <script>
+    //
+    // --- JAVASCRIPT UNIT CONVERTER
+
+    // If you study this file, you'll see that all the important data (namely, unit names and conversion factors) are explicitly defined as JavaScript arrays under the "Global Variable & Data Definitions" heading (which should be right under these comments).
+
+    // This is done, because: a) I figured it's the fastest way to do it, and b) it keeps everything in one file, making local storage and usage a snap.
+
+    // If you wanna mess with these array definitions, keep in mind the following (better study the definitions first before you read this; otherwise skip it altogether):
+
+    // 1) The unit[i][j] and factor[i][j] arrays should have the same j-length and their elements should correspond to each other in the j dimension; i.e. unit[0][2] should define the name and factor[0][2] the conversion factor of the SAME unit.  Duh!...
+
+    // 2) In every property (i.e. the i-dimension of the unit and factor arrays) there should be defined a 'primary' or 'base' unit, i.e. one with a conversion factor of 1.  The definitions of the other (secondary) units should use this formula:
+
+    // 1 [Secondary unit] = [Secondary unit conversion factor] [Primary Unit]
+    //                                   ^
+    //  This goes in the factor array ___|
+    //
+    //  e.g.: 1 ft = 0.3048 m
+
+    // ====================================
+    //  Global Variable & Data Definitions
+    // ====================================
+    var property = new Array();
     var unit = new Array();
     var factor = new Array();
 
@@ -267,3 +321,49 @@ var property = new Array();
           (key == 190) // Numpad
       )) e.preventDefault();
     });
+  </script>
+</head>
+
+<body>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:800|Poppins:700" rel="stylesheet">
+
+  <div class="converter-wrapper">
+    <h1>ENGINEERING <br>UNIT CONVERTER</h1>
+
+    <form name="property_form">
+      <span>
+        <select class="select-property" name="the_menu" size=1
+          onChange="UpdateUnitMenu(this, document.form_A.unit_menu); UpdateUnitMenu(this, document.form_B.unit_menu)">
+        </select>
+      </span>
+    </form>
+
+    <div class="converter-side-a">
+      <form name="form_A" onSubmit="return false">
+        <input type="text" class="numbersonly" name="unit_input" maxlength="20" value="0"
+          onKeyUp="CalculateUnit(document.form_A, document.form_B)">
+        <span>
+          <select name="unit_menu" onChange="CalculateUnit(document.form_B, document.form_A)">
+          </select>
+        </span>
+      </form>
+    </div> <!-- /converter-side-a -->
+
+    <div class="converter-equals">
+      <p>=</p>
+    </div> <!-- /converter-side-a -->
+
+    <div class="converter-side-b">
+      <form name="form_B" onSubmit="return false">
+        <input type="text" class="numbersonly" name="unit_input" maxlength="20" value="0"
+          onkeyup="CalculateUnit(document.form_B, document.form_A)">
+        <span>
+          <select name="unit_menu" onChange="CalculateUnit(document.form_A, document.form_B)">
+          </select>
+        </span>
+      </form>
+    </div> <!-- /converter-side-b -->
+  </div><!-- /converter-wrapper -->
+</body>
+
+</html>

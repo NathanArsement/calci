@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html style="padding-top: 0cm;">
+    <head>
+        <title>
+            CALCI
+        </title>
+        <style>
+            form{
+                font-size: xx-large;
+            }
+            input{
+                font-size: xx-large;
+                color:black;
+            }
+        </style>
+        <script>
+            var u,v,c,t,A;
+            function initial(a,b){
+                u=parseFloat(a);
+                Calculate(b);
+                
+            }
+            function final(a,b){
+                v=parseFloat(a);
+                Calculate(b);
+            }
+            function change(a,b){
+                c=parseFloat(a);
+                Calculate(b);
+            }
+            function time(a,b){
+                t=parseFloat(a);
+                Calculate(b);
+            }
+            function accelaration(a,b){
+                A=parseFloat(a);
+                Calculate(b);
+            }
+            function Calculate(b){
+                if(c!=null){
+                    if(t!=null){
+                        b.a.value=c/t;
+                        A=c/t;
+                    }
+                    if(A!=null){
+                        b.t.value=c/A;
+                        t=c/A;
+                    }
+                    if(u!=null && v==null){
+                        b.v.value=c-u;
+                        v=c+u;
+                    }
+                    if(v!=null && u==null){
+                        b.u.value=c-v;
+                        u=c+v;
+                    }
+                }
+                if(t!=null){
+                    if(A!=null){
+                        b.c.value=A*t;
+                        c=A*t;
+                    }
+                    // if(u!=null){
+                    //     if(c!=null){
+                    //         b.v.value=c+u;
+                    //         v=c+u;
+                    //     }
+                    // }
+                    // if(v!=null){
+                    //     if(c!=null){
+                    //         b.u.value=c-v;
+                    //         u=c+v;
+                    //     }
+                    // }
+                    if(c!=null){
+                        b.a.value=c/t;
+                        A=c/t;
+                    }
+                }
+                if(A!=null){
+                    if(c!=null){
+                        b.t.value=c/A;
+                        t=c/A;
+                    }
+                    if(t!=null){
+                        b.c.value=A*t;
+                        c=A*t;
+                    }
+                    // if(u!=null){
+                    //     if(c!=null){
+                    //         b.v.value=c+u;
+                    //         v=c+u;
+                    //     }
+                    // }
+                    // if(v!=null){
+                    //     if(c!=null){
+                    //         b.u.value=c+v;
+                    //         u=c+v;
+                    //     }
+                    // }
+                }
+                if(u!=null){
+                    if(v!=null){
+                        b.c.value=u-v;
+                        c=v-u;
+                    }
+                //     if(c!=null){
+                //         b.v.value=c+u;
+                //         v=c+u;
+                //     }
+                 }
+                if(v!=null){
+                    if(u!=null){
+                        b.c.value=u+v;
+                        c=v-u;
+                    }
+                //     if(c!=null){
+                //         b.u.value=c+v;
+                //         u=c+v;
+                //     }
+                 }
+                    
+            }
+        
+
+        </script>
+    </head>
+    <body style="padding-top: 0ch;">
+        <div style="background-color: #f44336; color: white; text-align: center; font-size: xxx-large; padding-top: 0%;">
+            <h2>
+                Accelaration<br><br>
+            </h2>
+        </div>
+        <form>
+            <table>
+                <tr>
+                    <td>
+                        Initial Veloicty:
+                    </td>
+                    <td>
+                        <input name="u" value="0" onchange="initial(this.value, this.form)" onclick="this.value=''">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Final Veloicty:
+                    </td>
+                    <td>
+                        <input name="v" value="0" onchange="final(this.value, this.form)" onclick="this.value=''">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Change in Veloicty:
+                    </td>
+                    <td>
+                        <input name="c" value="0" onchange="change(this.value, this.form)" onclick="this.value=''">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Time Period:
+                    </td>
+                    <td>
+                        <input name="t" value="0" onchange="time(this.value, this.form)" onclick="this.value=''">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Accelaration:
+                    </td>
+                    <td>
+                        <input name="a" value="0" onchange="accelaration(this.value, this.form)" onclick="this.value=''">
+                    </td>
+                </tr>
+            </table>
+            
+            
+            
+        </form>
+    </body>
+</html>

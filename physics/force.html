@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html style="padding-top: 0cm;">
+
+<head>
+    <title>
+        CALCI
+    </title>
+    <style>
+        form {
+            font-size: xx-large;
+        }
+
+        input {
+            font-size: xx-large;
+            color: black;
+        }
+    </style>
+    <script>
+
+        var m,ac,f;
+        function Mass(a, b) {
+            m = a;
+            Calculate(b);
+        }
+        function Acce(a, b) {
+            ac = a;
+            Calculate(b);
+        }
+        function Force(a, b) {
+            f = a;
+            Calculate(b);
+        }
+        function clear(ss){
+            ss.m.value='';
+            ss.f.value='';
+            ss.a.value='';
+            f=null;
+            ac=null;
+            m=null;
+        }
+        function Calculate(sd) {
+            if(m==null){
+                if(ac!=null && f!=null){
+                    sd.m.value=f/ac
+                }
+            }
+            if(ac==null){
+                if(f!=null && m!=null){
+                    sd.a.value=f/m
+                }
+            }
+            if(f==null){
+                if(ac!=null && m!=null){
+                    sd.f.value=m*ac
+                }
+            }
+            
+        }
+
+
+
+    </script>
+</head>
+
+<body style="padding-top: 0ch;">
+    <div style="background-color: #f44336; color: white; text-align: center; font-size: xxx-large; padding-top: 0%;">
+        <h2>
+            Velocity<br><br>
+        </h2>
+    </div>
+    <form>
+        <table>
+            <tr>
+                <td>
+                    Mass:
+                </td>
+                <td>
+                    <input name="m" value="0" onchange="Mass(this.value, this.form)" onclick="this.value='';">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Accelaration:
+                </td>
+                <td>
+                    <input name="a" value="0" onchange="Acce(this.value, this.form)" onclick="this.value='';">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Force:
+                </td>
+                <td>
+                    <input name="f" value="0" onchange="Force(this.value, this.form)" onclick="this.value='';">
+                </td>
+            </tr>
+        </table>
+        <button onclick="clear(this.from)" value="CLEAR">CLEAR</button>
+
+
+    </form>
+</body>
+
+</html>

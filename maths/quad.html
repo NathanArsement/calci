@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" type="text/css" href="../all.css">
+    <script src="../script.js"></script>
+    <style>
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: "Lato", sans-serif;
+        }
+
+        /* Style the tab */
+        .tab {
+            float: left;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+            width: 10%;
+            height: 100%;
+        }
+
+        /* Style the buttons inside the tab */
+        .tab button {
+            display: block;
+            background-color: inherit;
+            color: black;
+            padding: 22px 16px;
+            width: 100%;
+            border: none;
+            outline: none;
+            text-align: left;
+            cursor: pointer;
+            font-size: 17px;
+        }
+
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        /* Create an active/current "tab button" class */
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+            float: left;
+            padding: 0px 12px;
+            border: 1px solid #ccc;
+            width: 90%;
+            border-left: none;
+            height: 100%;
+            display: none;
+        }
+
+        /* Clear floats after the tab */
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        form {
+            font-size: xx-large;
+        }
+
+        input {
+            font-size: xx-large;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div style="background-color: #f44336; color: white; text-align: center; font-size: xxx-large; padding-top: 0%;">
+        <h2>
+            Quadrilaterals<br><br>
+        </h2>
+    </div>
+
+    <script>
+        var s, p, a, l, b, b2, h;
+        function value1(aa, bb) {
+            s = parseFloat(aa);
+            Calculate(bb);
+        }
+        function value2(aa, bb) {
+            l = parseFloat(aa);
+            Calculate(bb);
+        }
+        function value3(aa, bb) {
+            b = parseFloat(aa);
+            Calculate(bb);
+        }
+        function value4(aa, bb) {
+            b2 = parseFloat(aa);
+            Calculate(bb);
+        }
+        function value5(aa, bb) {
+            h = parseFloat(aa);
+            Calculate(bb);
+        }
+        function Calculate(sd) {
+            if (s != null) {
+                // p = 4*s;
+                sd.p.value = 4*s;
+                sd.a.value = s**2
+            }
+            if (l != null && b!=null) {
+                // p = 2*(l+b);
+                sd.p.value = 2*(l+b);
+                sd.a.value = l*b
+            }
+            if (h != null && b2!=null) {
+                // p = 2*(l+b);
+                sd.p.value = 2*(l+b);
+                sd.a.value = b2*h
+            }
+        }
+        function Black() {
+            document.getElementsByName("t").style.color = "black"
+        }
+
+    </script>
+    <div class="tab">
+        <button class="tablinks" onmouseover="openCity(event, 'v1')" className="active">Square</button>
+        <button class="tablinks" onmouseover="openCity(event, 'v2')">Rectangle</button>
+        <button class="tablinks" onmouseover="openCity(event, 'v3')">Parallelogram</button>
+    </div>
+    <div id="v1" class="tabcontent">
+        <form>
+            <table align="center">
+                <tr>
+                    <td>
+                        side:
+                    </td>
+                    <td>
+                        <input name="s" value="0" onchange="value1(this.value, this.form)" onclick="this.value=''"
+                            onkeypress="this.style.width = ((this.value.length + 1) * 24) + 'px';" size="4">
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Perimeter:
+                    </td>
+                    <td>
+                        <input name="p" value="0" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Area:
+                    </td>
+                    <td>
+                        <input name="a" value="0" readonly>
+                    </td>
+                </tr>
+            </table>
+
+
+
+        </form>
+    </div>
+    
+    <div id="v2" class="tabcontent">
+        <form>
+            <table align="center">
+                <tr>
+                    <td>
+                        length:
+                    </td>
+                    <td>
+                        <input name="l" value="0" onchange="value2(this.value, this.form)" onclick="this.value=''"
+                            onkeypress="this.style.width = ((this.value.length + 1) * 24) + 'px';" size="4">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        breadth:
+                    </td>
+                    <td>
+                        <input name="b" value="0" onchange="value3(this.value, this.form)" onclick="this.value=''"
+                            onkeypress="this.style.width = ((this.value.length + 1) * 24) + 'px';" size="4">
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Perimeter:
+                    </td>
+                    <td>
+                        <input name="p" value="0" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Areaa:
+                    </td>
+                    <td>
+                        <input name="a" value="0" readonly>
+                    </td>
+                </tr>
+            </table>
+
+
+
+        </form>
+    </div>
+    <div id="v3" class="tabcontent">
+        <form>
+            <table align="center">
+                <tr>
+                    <td>
+                        base:
+                    </td>
+                    <td>
+                        <input name="b" value="0" onchange="value4(this.value, this.form)" onclick="this.value=''"
+                            onkeypress="this.style.width = ((this.value.length + 1) * 24) + 'px';" size="4">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        height:
+                    </td>
+                    <td>
+                        <input name="h" value="0" onchange="value5(this.value, this.form)" onclick="this.value=''"
+                            onkeypress="this.style.width = ((this.value.length + 1) * 24) + 'px';" size="4">
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Perimeter:
+                    </td>
+                    <td>
+                        <input name="p" value="0" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Area:
+                    </td>
+                    <td>
+                        <input name="a" value="0" readonly>
+                    </td>
+                </tr>
+            </table>
+
+
+
+        </form>
+    </div>
+
+        
+    <div class="clearfix"></div>
+    <script>
+        function openCity(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+    <button class="calculator" onclick="openCalculator()"><i class="gg-calculator" style="font-size:72px"></i></button>
+</body>
+
+</html>

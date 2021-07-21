@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="user-scalable=no" />
+    <title>
+        CALCI
+    </title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="all.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    
+    
+        <img src="head.png" height=75>
+    
+    <div class="tab">
+
+
+        <button class="tablinks" onclick="openCity(event, 'MATHS')" id="defaultOpen">
+            MATHS
+        </button>
+        <button class="tablinks" onclick="openCity(event, 'PHYSICS')">PHYSICS</button>
+        <button class="tablinks" onclick="openCity(event, 'CHEMISTRY')">CHEMISTRY</button>
+        </font>
+    
+
+    <!-- Tab content -->
+    <div id="MATHS" class="tabcontent">
+        <div class="eventS">
+            <button class="event" onclick="openPage('maths/sum.html')">
+                <span onclick="this.parentElement.style.display='none'">
+                    Sum
+                </span>
+            </button>
+
+            <button class="event" onclick="openCity(event, 'Product')">Product</button>
+
+
+        </div>
+
+    </div>
+
+    <div id="PHYSICS" class="tabcontent">
+        <div class="eventS">
+            <button class="event" onclick="openPage('physics/velocity.html')">
+                <span onclick="this.parentElement.style.display='none'">
+                    Velocity
+                </span>
+            </button>
+            <button class="event" onclick="openPage('physics/accelaration.html')">
+                <span onclick="this.parentElement.style.display='none'">
+                    Accelaration
+                </span>
+            </button>
+        </div>
+    </div>
+
+    <div id="CHEMISTRY" class="tabcontent">
+        <div class="eventS">
+        <button class="event" onclick="openPage('chemistry/element.html')">
+            <span onclick="this.parentElement.style.display='none'">
+                Periodic Table
+            </span>
+        </button>
+    </div>
+    </div>
+</div>
+   
+    
+
+
+    <script>
+        document.getElementById("defaultOpen").click();
+    </script>
+    
+    <button class="calculator" onclick="openCalculator()"><i class="gg-calculator" style="font-size:72px"></i></button>
+</body>
+
+</html>
